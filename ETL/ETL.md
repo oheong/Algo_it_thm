@@ -28,9 +28,38 @@
 
 <hr>
 
-JAVA 오픈소스 ETL 도구
+ETL Tools
 
-SSIS, 
+- Air-flow
+- Luigi
+- SSIS
+- embulk
+- [기타등등](https://ichi.pro/ko/etlilan-mueos-imyeo-etleul-sayonghaneun-iyu-83573115998652)
+
+<hr>
+
+##### ETL vs ELT
+
+|      | ETL  | ELT  |
+| :--: | :--: | :--: |
+| 장점 |      |      |
+| 단점 |      |      |
+
+<hr>
+
+gcp etl using python
+
+https://towardsdatascience.com/building-a-simple-etl-pipeline-with-python-and-google-cloud-platform-6fde1fc683d5
+
+
+
+https://towardsdatascience.com/part-2-building-a-simple-etl-pipeline-with-python-and-google-cloud-functions-mysql-to-bigquery-4e1987f9f89b
+
+
+
+ETL
+
+https://datafloq.com/read/what-is-etl/6948
 
 
 
