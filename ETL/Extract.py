@@ -36,3 +36,4 @@ for i in range(0, num):
 # print(day)
 # print(hour)
 # print(min)
+print("총 "+str(len(year)) + "개의 데이터 추출")
