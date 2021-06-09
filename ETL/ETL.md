@@ -59,21 +59,3 @@ ETL Tools
 
 
 <hr>
-
-
-gcp etl using python
-
-https://towardsdatascience.com/building-a-simple-etl-pipeline-with-python-and-google-cloud-platform-6fde1fc683d5
-
-
-
-https://towardsdatascience.com/part-2-building-a-simple-etl-pipeline-with-python-and-google-cloud-functions-mysql-to-bigquery-4e1987f9f89b
-
-
-
-ETL
-
-https://datafloq.com/read/what-is-etl/6948
-
-
-
