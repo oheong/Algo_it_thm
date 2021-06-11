@@ -12,13 +12,18 @@ try:
     # 명령 처리할때 사용
     cursor = db.cursor()
 
-    cursor.execute("select * from member order by no;")
+    sql_job : str = rf'''
+        select * 
+        from member
+        where 1=1
+        order by no;
+    '''
+
+    cursor.execute(sql_job)
     rows=cursor.fetchall()
 
     for i in rows:
         print(i)
-
-    # print(execute())
 
 except psycopg2.DatabaseError as db_err:
     print("==========Not Connected!==========")
