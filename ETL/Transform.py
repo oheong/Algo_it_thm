@@ -1,9 +1,10 @@
 import pandas as pd
 import Connect
 """
-DB to CSV
+4. DB to CSV
 """
 
+# DB에 연결 후 가져온 값
 list = Connect.rows
 
 for i in list:
@@ -12,11 +13,12 @@ print("=====================================")
 print(str(len(list))+"개의 데이터 조회 완료")
 print("=====================================")
 
-col_name=['이름', '메일', '비밀번호', '생년월일']
+# csv 파일 헤더 행 추가
+col_name = ['이름', '메일', '비밀번호', '생년월일']
 
-df = pd.DataFrame(list, columns=col_name)
+# 리스트 데이터프레임에 저장
+df = pd.DataFrame(list, columns = col_name)
 
-df.to_csv('result.csv', index = False, encoding="utf-8-sig")
+# 파일 저장 이름, 인덱스 없음, 인코딩
+df.to_csv('result.csv', index = False, encoding = "utf-8-sig") # 그냥 utf-8하면 한글 오류남 다른게뭐지?
 print("&&&&&&&&csv 생성 완료&&&&&&&&")
-
-

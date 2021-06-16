@@ -7,7 +7,7 @@ import psycopg2
 """
 
 try:
-    print("*************Connected*************")
+    print("*************DB Connected*************")
     # DB 연동
     db = psycopg2.connect(host='localhost',
                         dbname='ABC-test',
