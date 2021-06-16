@@ -18,7 +18,7 @@ try:
     # 명령 처리할때 사용
     cursor = db.cursor()
 
-    # 실행 할 쿼리문
+    # 실행 할 쿼리문 (원천 데이터)
     sql_job : str = rf'''
         select 
                name,
