@@ -45,7 +45,7 @@ try:
     uri = "gs://oheong-test-bucket/result.csv"
 
     load_job = conn.load_table_from_uri(
-        uri, table_id, job_config=job_config # 여기에서 뻑남 뭐지?
+        uri, table_id, job_config = job_config
     ) 
 
     load_job.result()  # Waits for the job to complete.
@@ -59,7 +59,4 @@ try:
 except Exception as e : 
     print("========BigQuery Connect Error!========")
     print(e)
-"""
-404 POST https://bigquery.googleapis.com/bigquery/v2/projects/hstest-316104/jobs?prettyPrint=false: Not found: Project oheong-test-bucket
-"""
 
