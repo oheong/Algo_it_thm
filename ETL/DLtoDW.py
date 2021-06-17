@@ -68,6 +68,7 @@ try :
 
     # password에 암호화 알고리즘 적용
     for i in result.password:
+        print(i)
         result.password = aes(i)
 
     # for row in result:
@@ -87,10 +88,7 @@ try :
 
 
     print("----------DW적재 시작----------")
-    """
-        이제 여기부터 해야됨~~~!~!~!~!!~!
-    """
-      
+
     job_config = bigquery.LoadJobConfig(
         schema=[
             # 순서가 필요가 없는게 빅쿼리에서 쿼리속도를 최척화하여 셔플함
@@ -100,12 +98,10 @@ try :
             bigquery.SchemaField("birth", "Date", mode='nullable'),
         ],
         write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE, # 테이블 대체
-        source_format = bigquery.SourceFormat.CSV,
     )
-    uri = "gs://oheong-test-bucket/result.csv"
 
-    load_job = client.load_table_from_uri(
-        uri, table_id, job_config = job_config
+    load_job = client.load_table_from_dataframe(
+        result, table_id, job_config = job_config  
     ) 
 
     load_job.result()
@@ -113,9 +109,8 @@ try :
     destination_table = client.get_table(table_id)  
     
     print("========BigQuery Connect && Load!========")
-    
-    # 왜 중복?ㅠ 해결~~ 걍 덮어버리기(WRITE_TRUNCATE),,
     print("Loaded {} rows.".format(destination_table.num_rows)) 
+    
 
 except Exception as e : 
     print("----------Error----------")
