@@ -9,6 +9,7 @@ import pandas as pd
 """
 7. DataLake(BQ) to DataWarehouse(BQ)
     => BQ to BQ는 조회해서 적재하면 됨
+    스토리 : 90년대생 멤버들만 pw 암호화 해서 DW에 저장
 """
 """
 create DW table query : 
@@ -77,37 +78,44 @@ try :
         # password = base64.b64encode(iv + cipher.encrypt(raw))
         # row["password"].replace(row["password"], password.decode('utf-8')) # 장난하나 왜안되노🤛
 
+    """
+        삽질의 흔적,,,,, 눈물,,,,,, 파이썬 몰라서 오늘도 나는 눈물을 흘린다,,,,,,,,,
+    """
 
+    # 결과물
     print(result)
 
 
-    # print("----------DW적재 시작----------")
+    print("----------DW적재 시작----------")
+    """
+        이제 여기부터 해야됨~~~!~!~!~!!~!
+    """
       
-    # job_config = bigquery.LoadJobConfig(
-    #     schema=[
-    #         # 순서가 필요가 없는게 빅쿼리에서 쿼리속도를 최척화하여 셔플함
-    #         bigquery.SchemaField("name", "STRING", mode='required'),
-    #         bigquery.SchemaField("mail", "STRING", mode='required'),
-    #         bigquery.SchemaField("password", "STRING", mode='required'),
-    #         bigquery.SchemaField("birth", "Date", mode='nullable'),
-    #     ],
-    #     write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE, # 테이블 대체
-    #     source_format = bigquery.SourceFormat.CSV,
-    # )
-    # uri = "gs://oheong-test-bucket/result.csv"
+    job_config = bigquery.LoadJobConfig(
+        schema=[
+            # 순서가 필요가 없는게 빅쿼리에서 쿼리속도를 최척화하여 셔플함
+            bigquery.SchemaField("name", "STRING", mode='required'),
+            bigquery.SchemaField("mail", "STRING", mode='required'),
+            bigquery.SchemaField("password", "STRING", mode='required'),
+            bigquery.SchemaField("birth", "Date", mode='nullable'),
+        ],
+        write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE, # 테이블 대체
+        source_format = bigquery.SourceFormat.CSV,
+    )
+    uri = "gs://oheong-test-bucket/result.csv"
 
-    # load_job = client.load_table_from_uri(
-    #     uri, table_id, job_config = job_config
-    # ) 
+    load_job = client.load_table_from_uri(
+        uri, table_id, job_config = job_config
+    ) 
 
-    # load_job.result()
+    load_job.result()
 
-    # destination_table = client.get_table(table_id)  
+    destination_table = client.get_table(table_id)  
     
-    # print("========BigQuery Connect && Load!========")
+    print("========BigQuery Connect && Load!========")
     
-    # # 왜 중복?ㅠ 해결~~ 걍 덮어버리기(WRITE_TRUNCATE),,
-    # print("Loaded {} rows.".format(destination_table.num_rows)) 
+    # 왜 중복?ㅠ 해결~~ 걍 덮어버리기(WRITE_TRUNCATE),,
+    print("Loaded {} rows.".format(destination_table.num_rows)) 
 
 except Exception as e : 
     print("----------Error----------")
