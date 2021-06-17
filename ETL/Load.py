@@ -10,7 +10,7 @@ https://cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv#python
 ❗❗❗❗사전 작업 : Load.py 실행 전, gcp에 데이터셋과 테이블 만들기❗❗❗❗
 데이터셋은 만들어 놨음^~^
 
-create table query : 
+create DL table query : 
 
 create table dataset.memberDL(
     name string not null,
@@ -54,7 +54,9 @@ try:
     destination_table = conn.get_table(table_id)  
     
     print("========BigQuery Connect && Load!========")
-    print("Loaded {} rows.".format(destination_table.num_rows)) # 왜 중복?ㅠ 해결~~
+    
+    # 왜 중복?ㅠ 해결~~ 걍 덮어버리기(WRITE_TRUNCATE),,
+    print("Loaded {} rows.".format(destination_table.num_rows)) 
     
 
 except Exception as e : 
