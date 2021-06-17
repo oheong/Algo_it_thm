@@ -65,11 +65,14 @@ try :
 
     # result.replace("", aes(result['password']))
     # result.loc['password'] = aes(result['password'])
-
+    
+    list = []
+    print(result.password)
     # password에 암호화 알고리즘 적용
     for i in result.password:
-        print(i)
-        result.password = aes(i)
+        list.append(aes(i))
+
+    result['password'] = list
 
     # for row in result:
         # password = row['password']
@@ -117,3 +120,6 @@ except Exception as e :
     print(e)
 
 
+"""
+    헐 미친 진짜 완성❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗
+"""
