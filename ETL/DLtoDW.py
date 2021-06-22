@@ -1,9 +1,10 @@
 from google.oauth2 import service_account
 from google.cloud import bigquery
-import base64
 from Crypto import Random
 from Crypto.Cipher import AES
+import base64
 import pandas as pd
+
 
 
 """
@@ -22,15 +23,24 @@ create table dataset.memberDW(
 )
 """
 
-def aes(pwd):
+def encrypt(pwd):
     password = pwd
     raw = pad(password).encode('utf-8')
     iv = Random.new().read(AES.block_size)
-    cipher = AES.new(key, AES.MODE_CFB, iv) 
+    cipher = AES.new(key, AES.MODE_CBC, iv) 
     password = base64.b64encode(iv + cipher.encrypt(raw))
     return password.decode('utf-8') # 장난하나 왜안되노🤛
 
-    
+def decrypt(enc):
+    enc = base64.b64decode(enc)
+    iv = enc[:AES.block_size]
+    cipher = AES.new(key, AES.MODE_CBC, iv)
+    return  unpad(cipher.decrypt(enc[AES.block_size:])).decode('utf-8')
+
+def pad(s):
+    return s + (BS - len(s) % BS) * chr(BS - len(s) % BS)
+def unpad(s):
+    return s[:-ord(s[len(s)-1:])]
 
 # API 요청에 필요한 구성
 table_id = "hstest-316104.dataset.memberDW"
@@ -40,7 +50,7 @@ credentials = service_account.Credentials.from_service_account_file(
     scopes=["https://www.googleapis.com/auth/cloud-platform"],
 )
 
-key = 'eongisGoodGirlzz'.encode('utf-8')
+key = 'whycano__whycano'.encode('utf-8')
 try :
     client = bigquery.Client(project = 'hstest-316104', credentials = credentials)
 
@@ -57,7 +67,7 @@ try :
 
     # 블럭 사이즈 패딩 로직
     BS = 16
-    pad = lambda s : s + (BS - len(s) % BS) * chr(BS - len(s) % BS)
+
 
     # result.loc['password'] = aes(result['password'])
 
@@ -67,10 +77,13 @@ try :
     # result.loc['password'] = aes(result['password'])
     
     list = []
+
+    print("▦▦▦▦▦▦▦▦▦▦▦▦기존 password▦▦▦▦▦▦▦▦▦▦▦▦")
     print(result.password)
+
     # password에 암호화 알고리즘 적용
     for i in result.password:
-        list.append(aes(i))
+        list.append(encrypt(i))
 
     result['password'] = list
 
@@ -87,8 +100,8 @@ try :
     """
 
     # 결과물
+    print("▦▦▦▦▦▦▦▦▦▦▦▦결과물▦▦▦▦▦▦▦▦▦▦▦▦")
     print(result)
-
 
     print("----------DW적재 시작----------")
 
@@ -114,6 +127,13 @@ try :
     print("========BigQuery Connect && Load!========")
     print("Loaded {} rows.".format(destination_table.num_rows)) 
     
+    dec_list = []
+    for i in list:
+        dec_list.append(decrypt(i))
+
+    print("▦▦▦▦▦▦▦▦▦▦▦▦디코딩 한 password▦▦▦▦▦▦▦▦▦▦▦▦")
+    print(dec_list)
+
 
 except Exception as e : 
     print("----------Error----------")
