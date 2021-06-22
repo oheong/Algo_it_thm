@@ -8,7 +8,7 @@ https://cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv#python
 
 """
 ❗❗❗❗사전 작업 : Load.py 실행 전, gcp에 데이터셋과 테이블 만들기❗❗❗❗
-데이터셋은 만들어 놨음^~^
+데이터셋은 만들어 놨음 ^~^
 
 create DL table query : 
 

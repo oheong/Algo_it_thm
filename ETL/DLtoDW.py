@@ -78,7 +78,7 @@ try :
     
     list = []
 
-    print("▦▦▦▦▦▦▦▦▦▦▦▦기존 password▦▦▦▦▦▦▦▦▦▦▦▦")
+    print("============기존 password============")
     print(result.password)
 
     # password에 암호화 알고리즘 적용
@@ -100,10 +100,10 @@ try :
     """
 
     # 결과물
-    print("▦▦▦▦▦▦▦▦▦▦▦▦결과물▦▦▦▦▦▦▦▦▦▦▦▦")
+    print("============결과물============")
     print(result)
 
-    print("----------DW적재 시작----------")
+    print("----------DW 적재 시작----------")
 
     job_config = bigquery.LoadJobConfig(
         schema=[
@@ -124,14 +124,14 @@ try :
 
     destination_table = client.get_table(table_id)  
     
-    print("========BigQuery Connect && Load!========")
+    print("--------BigQuery Connect && Load!--------")
     print("Loaded {} rows.".format(destination_table.num_rows)) 
     
     dec_list = []
     for i in list:
         dec_list.append(decrypt(i))
 
-    print("▦▦▦▦▦▦▦▦▦▦▦▦디코딩 한 password▦▦▦▦▦▦▦▦▦▦▦▦")
+    print("============디코딩 한 password============")
     print(dec_list)
 
 

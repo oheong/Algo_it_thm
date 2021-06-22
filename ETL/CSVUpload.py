@@ -4,6 +4,11 @@ from google.oauth2 import service_account
 
 """
 5. GCP(CSV to BigQuery)
+
+csv 파일이란?
+    CSV(Comma Separated Values) 파일은 데이터 목록이 포함된 일반 파일이다.
+    다른 응용 프로그램간에 데이터를 교환하는데 사용된다
+
 """
 
 # API 요청에 필요한 구성
@@ -18,6 +23,7 @@ storage_client = storage.Client(credentials=credentials)
 # Google Cloud Console을 통해 생성된 버킷 이름
 bucket = storage_client.get_bucket('oheong-test-bucket')
 
+# 업로드할 csv 파일 명
 csv_file = 'result.csv'
 
 # csv 업로드
