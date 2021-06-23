@@ -127,13 +127,13 @@ try :
     print("--------BigQuery Connect && Load!--------")
     print("Loaded {} rows.".format(destination_table.num_rows)) 
     
-    dec_list = []
-    for i in list:
-        dec_list.append(decrypt(i))
+    # dec_list = []
+    # for i in list:
+    #     dec_list.append(decrypt(i))
 
-    print("============디코딩 한 password============")
-    for i in dec_list:
-        print(i)
+    # print("============디코딩 한 password============")
+    # for i in dec_list:
+    #     print(i)
 
 
 except Exception as e : 
