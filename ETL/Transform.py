@@ -20,5 +20,5 @@ col_name = ['이름', '메일', '비밀번호', '생년월일']
 df = pd.DataFrame(list, columns = col_name)
 
 # 파일 저장 이름, 인덱스 없음, 인코딩
-df.to_csv('result.csv', index = False, encoding = "utf-8-sig") # 그냥 utf-8하면 한글 오류남 다른게뭐지?
+df.to_csv('test.csv', index = False, encoding = "utf-8-sig") # 그냥 utf-8하면 한글 오류남 다른게뭐지?
 print("&&&&&&&&csv 생성 완료&&&&&&&&")

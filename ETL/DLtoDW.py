@@ -1,3 +1,4 @@
+from tkinter.constants import COMMAND
 from google.oauth2 import service_account
 from google.cloud import bigquery
 from Crypto import Random
@@ -60,7 +61,7 @@ try :
                password,
                birth
         from dataset.memberDL
-        where birth between '1991-01-01' and '1999-12-31'
+        -- where birth between '1991-01-01' and '1999-12-31'
     """
     result = client.query(query = query).to_dataframe()
     print("----------DL에서 조회 성공----------")
@@ -132,7 +133,8 @@ try :
         dec_list.append(decrypt(i))
 
     print("============디코딩 한 password============")
-    print(dec_list)
+    for i in dec_list:
+        print(i)
 
 
 except Exception as e : 

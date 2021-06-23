@@ -24,7 +24,7 @@ storage_client = storage.Client(credentials=credentials)
 bucket = storage_client.get_bucket('oheong-test-bucket')
 
 # 업로드할 csv 파일 명
-csv_file = 'result.csv'
+csv_file = 'test.csv'
 
 # csv 업로드
 try :
