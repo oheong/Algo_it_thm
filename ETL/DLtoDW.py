@@ -1,4 +1,3 @@
-from tkinter.constants import COMMAND
 from google.oauth2 import service_account
 from google.cloud import bigquery
 from Crypto import Random
