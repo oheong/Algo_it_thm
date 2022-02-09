@@ -31,3 +31,10 @@
 [JAVA 세마포어2](https://skasha.tistory.com/39)
 
 ========================
+
+
+[multi-module-msa](https://github.com/always0ne/springboot-multimodule-msa) // 말 나오던 템플릿이 이런거였구먼,,,, 나는 걍 썡개발해쓴ㄴ데 이런게 있었단말이지??
+
+[멀티모듈 설계 이야기](https://techblog.woowahan.com/2637/)
+
+========================
