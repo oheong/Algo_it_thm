@@ -8,6 +8,8 @@
 
 [API 게이트웨이 이해](https://bcho.tistory.com/1005)
 
+[API 게이트웨이 이해](https://n1tjrgns.tistory.com/284?category=971910)
+
 ========================
 
 [API 게이트웨이 응답시간 줄이기](https://www.popit.kr/msa%EC%97%90%EC%84%9C-%EB%8F%99%EC%8B%9C%EC%97%90-%EC%97%AC%EB%9F%AC-api-%ED%98%B8%EC%B6%9C%EB%A1%9C-%EC%9D%91%EB%8B%B5-%EC%8B%9C%EA%B0%84-%EC%A4%84%EC%9D%B4%EA%B8%B0/)
