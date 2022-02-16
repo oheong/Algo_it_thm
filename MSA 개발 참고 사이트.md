@@ -43,3 +43,5 @@
 [멀티모듈 설계 이야기](https://techblog.woowahan.com/2637/)
 
 ========================
+
+[estTemplate 설명](https://blog.advenoh.pe.kr/spring/%EC%8A%A4%ED%94%84%EB%A7%81-RestTemplate/)
