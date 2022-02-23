@@ -49,3 +49,5 @@
 
 
 [MSA 설계 시 고려사항](https://s-core.co.kr/insight/view/%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B2%BD%EB%9F%89%ED%99%94%EB%A5%BC-%EC%9C%84%ED%95%9C-msa-%EC%84%A4%EA%B3%84-%EC%8B%9C-%EA%B3%A0%EB%A0%A4%EC%82%AC%ED%95%AD/)
+
+[MSA 도출 방법]([[DDD&amp;MSA] 마이크로서비스 설계 — 팽이돌리기](https://gre-eny.tistory.com/286))
