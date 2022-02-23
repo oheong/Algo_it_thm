@@ -34,9 +34,7 @@
 
 [황금열쇠 latch](https://codechacha.com/ko/java-countdownlatch/)
 
-
 ========================
-
 
 [multi-module-msa](https://github.com/always0ne/springboot-multimodule-msa) // 말 나오던 템플릿이 이런거였구먼,,,, 나는 걍 썡개발해쓴ㄴ데 이런게 있었단말이지??
 
@@ -44,4 +42,10 @@
 
 ========================
 
-[estTemplate 설명](https://blog.advenoh.pe.kr/spring/%EC%8A%A4%ED%94%84%EB%A7%81-RestTemplate/)
+[restTemplate 설명](https://blog.advenoh.pe.kr/spring/%EC%8A%A4%ED%94%84%EB%A7%81-RestTemplate/)
+
+
+
+
+
+[MSA 설계 시 고려사항](https://s-core.co.kr/insight/view/%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B2%BD%EB%9F%89%ED%99%94%EB%A5%BC-%EC%9C%84%ED%95%9C-msa-%EC%84%A4%EA%B3%84-%EC%8B%9C-%EA%B3%A0%EB%A0%A4%EC%82%AC%ED%95%AD/)
