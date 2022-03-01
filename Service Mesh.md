@@ -77,6 +77,20 @@ LB는 MSA의 각 모듈에 대한 연결 정보(ip, port, hostname)를 알고있
 
 LB와 Middle-tire server 사이의 에러 대응을 위한 Rest 기반 서비스이다.
 
+
+
+MSA에서 각 서비스별로 application이 나뉘어져 있다. 각 application들은 서로간의 통신을 위해, 서로 연결 정보(ip, hostname, port)를 알아야 한다. 그럼 이 연결정보를 Load Balancer에 저장하게된다.
+
+
+
+msa 구조를 클라우드에 구축하게되면, 각 서비스 어플리케이션 연결정보는 계속해서 바뀌게 된다. 이 때 마다 로드밸런서에 구성된 설정을 바꿔야하는 이상한 상황이 발생한다.
+
+
+
+클라우드 환경에서의 연결정보(ip, hostname, port)의 Registering(등록)과 De-registering(해지)를 바로바로 할 수 있도록 해 주는 것이 eureka이다.
+
+
+
 ###### Eureka에 존재하는 단어
 
 > ###### Discovery
@@ -96,6 +110,10 @@ LB와 Middle-tire server 사이의 에러 대응을 위한 Rest 기반 서비스
 > - Eureka Server는 Eureka Client의 정보를 Registry에 등록한다
 > 
 > - Eureka Server는 Eureka Client의 Heartbeat를 수신하여 해당 Client가 수행 중임을 안다.
+> 
+> - heartbeat가 오지 않는 경우, eureka server는 client가 죽었다고 판단하여 해당 client정보를 registry에서 삭제한다.
+> 
+> - 이렇게 유지된 registry 정보를 server는 client들에게 전달한다.
 > 
 > - 등록되는 정보는 ID와 URL이 포함되는데, 마이크로서비스는 유레카 클라이언트를 이용해서 정보를 유레카 서버에 등록한다.
 > 
@@ -121,14 +139,10 @@ MSA 환경에서 가장 중요한 점은 각각의 마이크로 서비스간의 
 
 아니 그래서 url 불러올때는 어떻게써야되냐고,,,,ㅋ 아 진짜 불친절하냄1`!~!~~!~!!~!~
 
-
-
 ### Service(Eureka-Client) : 실제 로직이 실행되는 서비스
 
 ### Eureka-Server : 서비스들의 정보를 관리하는 Eureka Server
 
 ### Zuul(Eureka-Client) : 실제 서비스로 Routing 하는 Edge서비스
-
-
 
 내가 찾던게 Zuul이었음!!!!!!!!!!!!!!!!!!이걸로 url 설정해서 라우팅하기 이제시작 궈궈 가보작오!~!~~~
