@@ -50,4 +50,9 @@ DBMS를 이용한다면 DB에 데이터를 저장하고, 저장된 데이터를 
 
 
 이거 읽어보면 좋을듯
-[몽고db, redis](https://meetup.toast.com/posts/274)
+
+[몽고1](https://meetup.toast.com/posts/274)
+
+[몽고2](https://www.blog-dreamus.com/post/flo-tech-mongodb-%EB%8F%84%EC%9E%85%EA%B8%B0)
+
+
