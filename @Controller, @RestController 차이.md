@@ -15,6 +15,7 @@ Spring에서 컨트롤러를 지정해주기 위한 어노테이션들이다.
 ##### @RestController
 
 - Restful 웹서비스의 컨트롤러
+- @Contoller + @ResponseBody
 
 
 
@@ -85,6 +86,8 @@ public class EntryAPIController {
 ```
 
 [코드 출처 : 나](https://github.com/oheong/Possible_Red/blob/master/backend/src/main/java/com/ssafy/SNS201/controller/EntryAPIController.java)
+
+<hr>
 
 #### @RestController (Spring Restful Controller)
 
