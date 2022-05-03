@@ -93,6 +93,9 @@ Service단에서 builder를 사용해 객체를 생성한다
 | findAll() | 전체 레코드 불러오기. 정렬, 페이징 가능 |
 | count()   | 레코드 갯수                             |
 | delete()  | 레코드 삭제                             |
+❗️MICHIN❗️ JPA는 update만을 위한 메소드는 없음❗️❗️❗️❗️
+
+대신 save()가 update의 기능도 수행하기 때문에, 데이터 변경 뒤 save()하면 됨❗️
 
 
 
